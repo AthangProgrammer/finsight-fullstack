@@ -1,0 +1,14 @@
+{
+  "name": "finsight-fullstack",
+  "private": true,
+  "type": "module",
+  "workspaces": ["frontend", "backend", "database"],
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "npm run dev --workspaces --if-present",
+    "test": "npm test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "db:migrate": "npm run db:migrate -w database",
+    "db:seed": "npm run db:seed -w database"
+  }
+}

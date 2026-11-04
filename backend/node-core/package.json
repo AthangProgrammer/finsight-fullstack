@@ -1,0 +1,17 @@
+{
+  "name": "finsight-node-core",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "demo:http": "node 01-http-server.js",
+    "demo:events": "node 02-event-emitter.js",
+    "demo:fs": "node 03-fs-path.js",
+    "demo:buffers": "node 04-buffers.js",
+    "demo:stream": "node 05-csv-stream.js",
+    "demo:async": "node 06-callback-promise-async.js",
+    "demo:loop": "node 07-event-loop.js",
+    "demo:net": "node 08-net-dns.js",
+    "demo:es": "node 09-es5-vs-es6.js",
+    "repl": "node repl.js"
+  }
+}

@@ -25,9 +25,9 @@ Update a topic's row whenever a feature covering it lands (see `CLAUDE.md`).
 |---|---|---|---|---|---|
 | M1.1 | Working of a web browser | Report §6; DevTools capture of the app loading | Network tab waterfall: DNS → TLS → HTML → JS bundle → `/api/auth/me`. Explain parsing, DOM, CSSOM, render and JS. | 9 | Planned |
 | M1.2 | HTTP | `NC/01-http-server.js`; `BE/routes/*`; API table | Run `curl -i` on a route and point out the method, status line, headers and body. Show 200/201/400/401/404/429 in the API table. | 1, 5 | Done |
-| M1.3 | HTTPS | Production on Vercel + Render; `Secure` cookie | Padlock and certificate in the browser. Cookie marked Secure in DevTools → Application. | 9 | Planned |
+| M1.3 | HTTPS | Production on Vercel + Render; `Secure` cookie | Padlock and certificate in the browser. Cookie marked Secure in DevTools → Application. | 9 | Done |
 | M1.4 | DNS | `NC/08-net-dns.js` | Run `dns.lookup` / `resolve4` on the Vercel and Render hostnames, and compare with `nslookup`. | 1 | Done |
-| M1.5 | TLS | `PG/index.js` (`ssl.ca`, `rejectUnauthorized`); Atlas TLS; production HTTPS | `curl -vI https://<app>` shows the TLS version, cipher and certificate chain. Sequelize refuses to connect without the CA. | 3, 9 | Planned |
+| M1.5 | TLS | `PG/index.js` (`ssl.ca`, `rejectUnauthorized`); Atlas TLS; production HTTPS | `curl -vI https://<app>` shows the TLS version, cipher and certificate chain. Sequelize refuses to connect without the CA. | 3, 9 | Done |
 | M1.6 | XML introduction | `GET /api/export/expenses.xml` (`BE/routes/export.js`, `BE/lib/xml.js`) | Download the export, open it in the browser, and explain elements, attributes and escaping. | 5 | Done |
 | M1.7 | JSON introduction | Every API body; `express.json()` | Show a request and response in DevTools. Malformed JSON → 400. | 2, 5 | Done |
 | M1.8 | DOM | `FE/pages/*`; `document.title`, focus handling | Elements panel: watch the live DOM change as an expense is added. | 6 | Done |
@@ -127,11 +127,11 @@ Update a topic's row whenever a feature covering it lands (see `CLAUDE.md`).
 | M6.2 | Sequelize | `PG/models/*`, `PG/migrations/*`, `PG/seeders/*`, `database/.sequelizerc` | Run `db:migrate:undo` then `db:migrate`; a query using associations. | 3 | Done |
 | M6.3 | NoSQL (MongoDB) | MongoDB Atlas M0, database `finsight`: collections `chat_logs`, `audit_logs` (90-day TTL) | Atlas collection view after asking an insight and logging in; explain documents vs rows and why logs fit documents. | 3 | Done |
 | M6.4 | Mongoose | `MG/index.js` (`connectMongo`, `strictQuery`, `sanitizeFilter`), `MG/models/ChatLog.js`, `MG/models/AuditLog.js` | Schema validation rejecting a bad `source`; the TTL index; an aggregation such as "insights per day". | 3, 4, 7 | Done |
-| M6.5 | Connecting React frontend to Express backend | `FE/hooks/useApi.js`; Vite proxy (dev); Vercel rewrite (prod) | Add an expense and follow it UI → API → DB. | 6, 9 | Planned |
+| M6.5 | Connecting React frontend to Express backend | `FE/hooks/useApi.js`; Vite proxy (dev); Vercel rewrite (prod) | Add an expense and follow it UI → API → DB. | 6, 9 | Done |
 | M6.6 | CORS | `cors` allowlist with credentials in `BE/app.js` | A request from a non-allowed origin fails in the console. | 2 | Done |
-| M6.7 | Environment variables | `BE/config.js` (zod-validated), root `.env.example`, `--env-file`, host dashboards | Remove `JWT_SECRET` → the server refuses to start. | 2 | Planned |
-| M6.8 | Deployment: Vercel | `frontend/vercel.json` | The live URL and the rewrite rule. | 9 | Planned |
-| M6.9 | Deployment: Render | `render.yaml` | Render dashboard, logs and health check. | 9 | Planned |
+| M6.7 | Environment variables | `BE/config.js` (zod-validated), root `.env.example`, `--env-file`, host dashboards | Remove `JWT_SECRET` → the server refuses to start. | 2 | Done |
+| M6.8 | Deployment: Vercel | `frontend/vercel.json` | The live URL and the rewrite rule. | 9 | Done |
+| M6.9 | Deployment: Render | `render.yaml` | Render dashboard, logs and health check. | 9 | Done |
 
 ## Coverage
 
@@ -139,13 +139,13 @@ Coverage = topics with status `Planned` or `Done` ÷ total topics. The "Done" co
 
 | Module | Topics | Planned + Done | Planned coverage | Done |
 |---|---|---|---|---|
-| M1 Web fundamentals | 11 | 11 | 100% | 73% |
+| M1 Web fundamentals | 11 | 11 | 100% | 91% |
 | M2 JavaScript | 22 | 22 | 100% | 91% |
 | M3 React | 19 | 19 | 100% | 100% |
 | M4 Node.js | 14 | 14 | 100% | 100% |
 | M5 Express | 9 | 9 | 100% | 78% |
-| M6 Databases & integration | 9 | 9 | 100% | 56% |
-| **Overall** | **84** | **84** | **100%** | **87%** |
+| M6 Databases & integration | 9 | 9 | 100% | 100% |
+| **Overall** | **84** | **84** | **100%** | **94%** |
 
 The target is at least 90% of topics. It is met at planning time.
 

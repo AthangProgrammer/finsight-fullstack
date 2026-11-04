@@ -6,6 +6,7 @@ import { expensesRouter } from './expenses.js';
 import { budgetRouter } from './budget.js';
 import { summaryRouter } from './summary.js';
 import { exportRouter } from './export.js';
+import { insightsRouter } from './insights.js';
 
 export const apiRouter = Router();
 
@@ -16,4 +17,4 @@ apiRouter.use('/expenses', expensesRouter);
 apiRouter.use('/budget', budgetRouter);
 apiRouter.use('/summary', summaryRouter);
 apiRouter.use('/export', exportRouter);
-apiRouter.use('/insights', Router());
+apiRouter.use('/insights', insightsRouter);

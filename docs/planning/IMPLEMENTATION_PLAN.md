@@ -209,7 +209,7 @@ Estimates are in evenings (about 3 focused hours) for one person. Topic codes (M
 **Done when:** every route works against the API, and the Playwright screenshots of both apps match per route at both viewports (diff under an agreed threshold, differences reviewed by eye).
 **Estimate:** 4.
 
-## Phase 7: AI insights (simple)
+## Phase 7: AI insights (simple) ✅
 
 **Goal:** one safe, small AI feature.
 

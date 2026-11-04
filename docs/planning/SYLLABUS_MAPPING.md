@@ -24,16 +24,16 @@ Update a topic's row whenever a feature covering it lands (see `CLAUDE.md`).
 | # | Topic | Where in the project | Viva demo | Phase | Status |
 |---|---|---|---|---|---|
 | M1.1 | Working of a web browser | Report §6; DevTools capture of the app loading | Network tab waterfall: DNS → TLS → HTML → JS bundle → `/api/auth/me`. Explain parsing, DOM, CSSOM, render and JS. | 9 | Planned |
-| M1.2 | HTTP | `NC/01-http-server.js`; `BE/routes/*`; API table | Run `curl -i` on a route and point out the method, status line, headers and body. Show 200/201/400/401/404/429 in the API table. | 1, 5 | Planned |
+| M1.2 | HTTP | `NC/01-http-server.js`; `BE/routes/*`; API table | Run `curl -i` on a route and point out the method, status line, headers and body. Show 200/201/400/401/404/429 in the API table. | 1, 5 | Done |
 | M1.3 | HTTPS | Production on Vercel + Render; `Secure` cookie | Padlock and certificate in the browser. Cookie marked Secure in DevTools → Application. | 9 | Planned |
 | M1.4 | DNS | `NC/08-net-dns.js` | Run `dns.lookup` / `resolve4` on the Vercel and Render hostnames, and compare with `nslookup`. | 1 | Done |
 | M1.5 | TLS | `PG/index.js` (`ssl.ca`, `rejectUnauthorized`); Atlas TLS; production HTTPS | `curl -vI https://<app>` shows the TLS version, cipher and certificate chain. Sequelize refuses to connect without the CA. | 3, 9 | Planned |
-| M1.6 | XML introduction | `GET /api/export/expenses.xml` (`BE/routes/export.js`, `BE/lib/xml.js`) | Download the export, open it in the browser, and explain elements, attributes and escaping. | 5 | Planned |
-| M1.7 | JSON introduction | Every API body; `express.json()` | Show a request and response in DevTools. Malformed JSON → 400. | 2, 5 | Planned |
+| M1.6 | XML introduction | `GET /api/export/expenses.xml` (`BE/routes/export.js`, `BE/lib/xml.js`) | Download the export, open it in the browser, and explain elements, attributes and escaping. | 5 | Done |
+| M1.7 | JSON introduction | Every API body; `express.json()` | Show a request and response in DevTools. Malformed JSON → 400. | 2, 5 | Done |
 | M1.8 | DOM | `FE/pages/*`; `document.title`, focus handling | Elements panel: watch the live DOM change as an expense is added. | 6 | Planned |
-| M1.9 | URL | `new URL(req.url)` in `NC/01`; query params on `/api/expenses?page=…` | Break a URL into protocol, host, path and query. Change `page` and watch the results change. | 1, 5 | Planned |
-| M1.10 | URI | Resource paths (`/api/expenses/42`); report §10 | Explain URI vs URL vs URN using our resource paths, and show `encodeURIComponent` on the search query. | 1, 5 | Planned |
-| M1.11 | REST API | `BE/routes/*` | Walk the endpoint table: resources, verbs, statelessness, status codes. | 5 | Planned |
+| M1.9 | URL | `new URL(req.url)` in `NC/01`; query params on `/api/expenses?page=…` | Break a URL into protocol, host, path and query. Change `page` and watch the results change. | 1, 5 | Done |
+| M1.10 | URI | Resource paths (`/api/expenses/42`); report §10 | Explain URI vs URL vs URN using our resource paths, and show `encodeURIComponent` on the search query. | 1, 5 | Done |
+| M1.11 | REST API | `BE/routes/*` | Walk the endpoint table: resources, verbs, statelessness, status codes. | 5 | Done |
 
 ## Module 2: JavaScript
 
@@ -97,7 +97,7 @@ Update a topic's row whenever a feature covering it lands (see `CLAUDE.md`).
 | M4.5 | EventEmitter | `NC/02-event-emitter.js` (`BudgetMonitor`) | Spend past 80% and 100% → the events fire. | 1 | Done |
 | M4.6 | Networking module | `NC/08-net-dns.js` (`net` TCP echo) | Two terminals: one server, one client. | 1 | Done |
 | M4.7 | Buffers | `NC/04-buffers.js` | `₹` is 3 bytes; hex/base64 round trip. | 1 | Done |
-| M4.8 | Streams | `NC/05-csv-stream.js`; `GET /api/export/expenses.csv` | A 100k-row file with flat memory; download the CSV export. | 1, 5 | Planned |
+| M4.8 | Streams | `NC/05-csv-stream.js`; `GET /api/export/expenses.csv` | A 100k-row file with flat memory; download the CSV export. | 1, 5 | Done |
 | M4.9 | File system | `NC/03-fs-path.js` | Create, read, list, stat and delete files in `data/`. | 1 | Done |
 | M4.10 | path | `NC/03-fs-path.js` | `join` vs `resolve`; `parse`. | 1 | Done |
 | M4.11 | REPL | `NC/REPL.md` + `NC/repl.js` (database models in context) | Live: `.editor`, `_`, and querying a model from the REPL. | 1, 3 | Done |
@@ -112,8 +112,8 @@ Update a topic's row whenever a feature covering it lands (see `CLAUDE.md`).
 | M5.1 | Introduction to Express | `BE/app.js` | Contrast it with `NC/01`. | 2 | Done |
 | M5.2 | Middleware | helmet, cors, json, cookie-parser, rate-limit, `BE/middleware/requireAuth.js`, `validate.js` | Explain the order. Remove `requireAuth` and show the 401 disappear. | 2, 4 | Planned |
 | M5.3 | Routing | `BE/routes/*.js` with `express.Router` | Show the mount points under `/api`. | 2 | Done |
-| M5.4 | RESTful API design | Resource naming, verbs, status codes, pagination envelope | API table in report §10. | 5 | Planned |
-| M5.5 | CRUD operations | Expenses (including PATCH) and budget | Create, read, update and delete live in the UI and with curl. | 5 | Planned |
+| M5.4 | RESTful API design | Resource naming, verbs, status codes, pagination envelope | API table in report §10. | 5 | Done |
+| M5.5 | CRUD operations | Expenses (including PATCH) and budget | Create, read, update and delete live in the UI and with curl. | 5 | Done |
 | M5.6 | Error handling | `BE/middleware/errorHandler.js`, `notFound.js`, `HttpError` | A bad id → JSON 404. A forced error → 500 with no stack in production. | 2 | Done |
 | M5.7 | Logging | `pino-http` with redaction; auth events in `AuditLog` | A request's log line; the password field shows `[Redacted]`. | 2, 4 | Planned |
 | M5.8 | Authentication (JWT) | `BE/routes/auth.js`, `BE/middleware/requireAuth.js`, `BE/lib/token.js` | A tampered token → 401; a token reused after logout → 401. | 4 | Done |
@@ -139,13 +139,13 @@ Coverage = topics with status `Planned` or `Done` ÷ total topics. The "Done" co
 
 | Module | Topics | Planned + Done | Planned coverage | Done |
 |---|---|---|---|---|
-| M1 Web fundamentals | 11 | 11 | 100% | 9% |
+| M1 Web fundamentals | 11 | 11 | 100% | 64% |
 | M2 JavaScript | 22 | 22 | 100% | 9% |
 | M3 React | 19 | 19 | 100% | 0% |
-| M4 Node.js | 14 | 14 | 100% | 93% |
-| M5 Express | 9 | 9 | 100% | 56% |
+| M4 Node.js | 14 | 14 | 100% | 100% |
+| M5 Express | 9 | 9 | 100% | 78% |
 | M6 Databases & integration | 9 | 9 | 100% | 56% |
-| **Overall** | **84** | **84** | **100%** | **31%** |
+| **Overall** | **84** | **84** | **100%** | **42%** |
 
 The target is at least 90% of topics. It is met at planning time.
 

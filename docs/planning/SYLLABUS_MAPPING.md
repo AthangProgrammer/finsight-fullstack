@@ -60,7 +60,7 @@ Update a topic's row whenever a feature covering it lands (see `CLAUDE.md`).
 | M2.19 | Generators | `function* lastMonths(n)` in `FE/lib/months.js` | Step through it with `.next()` in the console. | 6 | Done |
 | M2.20 | Promise | `NC/06-callback-promise-async.js`; `Promise.all` loading summary + budget | Run `NC/06`; show the parallel requests in the Network tab. | 1, 6 | Done |
 | M2.21 | async/await | `FE/hooks/useApi.js`; every route handler | Walk `useApi` through try/catch/finally. | 6 | Done |
-| M2.22 | Fetch | `FE/hooks/useApi.js`; `BE/services/groq.js` (server-side fetch) | Network tab request with `credentials: 'include'`; `AbortController` cancelling on unmount. | 6, 7 | Planned |
+| M2.22 | Fetch | `FE/hooks/useApi.js`; `BE/services/groq.js` (server-side fetch) | Network tab request with `credentials: 'include'`; `AbortController` cancelling on unmount. | 6, 7 | Done |
 
 ## Module 3: React
 

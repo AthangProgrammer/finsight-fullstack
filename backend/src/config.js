@@ -11,6 +11,8 @@ const schema = z.object({
   JWT_SECRET: z.string().min(32),
   JWT_EXPIRES_IN: z.string().default('30m'),
   TRUST_PROXY_HOPS: z.coerce.number().int().min(0).max(5).default(0),
+  GROQ_API_KEY: z.string().optional().transform((v) => v || undefined),
+  GROQ_MODEL: z.string().min(1).default('llama-3.1-8b-instant'),
 });
 
 const parsed = schema.safeParse(process.env);

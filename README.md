@@ -109,7 +109,7 @@ Every syllabus topic (84 of 84) is mapped to a file or feature and a viva demo i
 
 - Never push to `main`. Branch as `name/topic` (e.g. `om/node-core`).
 - Use Conventional Commits (`feat: add expense update route`).
-- Open a PR using the template. One reviewer must approve and CI must pass before merging.
+- Open a PR using the template. CI must pass before merging. No reviewer approval is required while Athang is the sole owner.
 
 ## Team
 

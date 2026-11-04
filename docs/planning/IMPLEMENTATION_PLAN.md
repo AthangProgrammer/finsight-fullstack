@@ -2,22 +2,22 @@
 
 Estimates are in evenings (about 3 focused hours) for one person. Topic codes (M1.3 etc.) refer to rows in `SYLLABUS_MAPPING.md`. Once Phase 2 lands, Phases 1, 3 and the UI half of 6 can run in parallel because they live in different workspaces.
 
-**Owners are a proposal.** Swap them freely, but keep one owner per phase so someone is accountable. Every PR needs a reviewer who isn't its author.
+**Owners are a proposal.** Swap them freely, but Athang is the sole owner of every phase, and no reviewer approval is required for now.
 
-| Phase | Name | Workspace(s) | Evenings | Depends on | Proposed owner | Reviewer |
-|---|---|---|---|---|---|---|
-| 0 | Setup | root, docs | 1 | — | Athang | team |
-| 1 | Node core + workspace root | root, `backend/node-core` | 2 | 0 | Athang | Aryan |
-| 2 | Express skeleton | `backend` | 1 | 1 (root package.json) | Athang | Aryan |
-| 3 | Database (Postgres + Mongo) | `database` | 3 | 1 | Athang | Om |
-| 4 | Auth | `backend`, `database` | 2 | 2, 3 | Athang | Aryan |
-| 5 | REST API | `backend` | 2 | 4 | Athang | Om |
-| 6 | Frontend port | `frontend` | 4 | 2 (UI), 5 (wiring) | Athang | Aneesh |
-| 7 | AI insights | `backend`, `database` | 1 | 5 | Athang | Aneesh |
-| 8 | Hardening + tests | all | 3 | 5, 6, 7 | Athang | Om |
-| 9 | Deployment + CI | root, hosts | 2 | 8 | Athang | Aryan |
-| 10 | Report + demo | `docs/report` | 2 | 9 | **on hold**, all | — |
-| | **Total** | | **23** | | Athang 21 (excluding Phase 10) | |
+| Phase | Name | Workspace(s) | Evenings | Depends on | Owner |
+|---|---|---|---|---|---|
+| 0 | Setup | root, docs | 1 | — | Athang |
+| 1 | Node core + workspace root | root, `backend/node-core` | 2 | 0 | Athang |
+| 2 | Express skeleton | `backend` | 1 | 1 (root package.json) | Athang |
+| 3 | Database (Postgres + Mongo) | `database` | 3 | 1 | Athang |
+| 4 | Auth | `backend`, `database` | 2 | 2, 3 | Athang |
+| 5 | REST API | `backend` | 2 | 4 | Athang |
+| 6 | Frontend port | `frontend` | 4 | 2 (UI), 5 (wiring) | Athang |
+| 7 | AI insights | `backend`, `database` | 1 | 5 | Athang |
+| 8 | Hardening + tests | all | 3 | 5, 6, 7 | Athang |
+| 9 | Deployment + CI | root, hosts | 2 | 8 | Athang |
+| 10 | Report + demo | `docs/report` | 2 | 9 | **on hold**, all |
+| | **Total** | | **23** | | Athang 21 (excluding Phase 10) |
 
 ---
 
@@ -267,7 +267,7 @@ Estimates are in evenings (about 3 focused hours) for one person. Topic codes (M
 - `.github/workflows/ci.yml` runs on every PR: `npm ci`, lint, then tests per workspace, then `npm audit --audit-level=high`. Actions are pinned by SHA.
 - `.github/dependabot.yml`.
 - A weekly workflow that hits `/healthz?db=1`.
-- Branch protection on `main`: a PR, one approval and passing CI are all required.
+- Branch protection on `main`: a PR and passing CI are required (no approval count while Athang is the sole owner).
 
 **Syllabus:** M6.5 to M6.9, M1.3, M1.5.
 **Done when:** the production URL works end to end; `curl -vI` shows TLS and the security headers; and a PR with a failing test is blocked from merging.

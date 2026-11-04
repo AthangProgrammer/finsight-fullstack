@@ -48,7 +48,7 @@ These are placeholders until each phase adds them. Run them from the repo root.
 
 - Never push to `main`. Work on `name/topic` branches (e.g. `aryan/sequelize-models`).
 - Use Conventional Commits: `feat:`, `fix:`, `docs:`, `test:`, `refactor:`, `chore:`, `ci:`.
-- Merge only through a PR with one reviewer approval and green CI, and fill in the PR template.
+- Merge only through a PR with green CI, and fill in the PR template. No reviewer approval is required while Athang is the sole owner.
 
 ## Security rules (full plan: docs/planning/SECURITY.md, OWASP Top 10:2025)
 

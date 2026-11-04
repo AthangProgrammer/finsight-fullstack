@@ -1,0 +1,8 @@
+const path = require('node:path');
+
+module.exports = {
+  config: path.resolve(__dirname, 'postgres', 'config.cjs'),
+  'models-path': path.resolve(__dirname, 'postgres', 'models'),
+  'migrations-path': path.resolve(__dirname, 'postgres', 'migrations'),
+  'seeders-path': path.resolve(__dirname, 'postgres', 'seeders'),
+};

@@ -37,7 +37,7 @@ These are placeholders until each phase adds them. Run them from the repo root.
 
 ## Conventions
 
-- ES modules everywhere (`"type": "module"`): `import`/`export`, no `require`. Sequelize CLI config files are the only `.cjs` exception.
+- ES modules everywhere (`"type": "module"`): `import`/`export`, no `require`. Sequelize CLI config, migrations and seeders are the only `.cjs` exceptions.
 - No comments in final code. Names carry the meaning; explanations go in `docs/`.
 - zod validation on every route that reads `body`, `params` or `query`. Invalid input is rejected, never silently coerced.
 - No secrets in code or commits. Config comes from env through `backend/src/config.js`, and `.env.example` lists every key.

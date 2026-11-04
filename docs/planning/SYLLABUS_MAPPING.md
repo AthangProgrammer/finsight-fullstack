@@ -30,7 +30,7 @@ Update a topic's row whenever a feature covering it lands (see `CLAUDE.md`).
 | M1.5 | TLS | `PG/index.js` (`ssl.ca`, `rejectUnauthorized`); Atlas TLS; production HTTPS | `curl -vI https://<app>` shows the TLS version, cipher and certificate chain. Sequelize refuses to connect without the CA. | 3, 9 | Planned |
 | M1.6 | XML introduction | `GET /api/export/expenses.xml` (`BE/routes/export.js`, `BE/lib/xml.js`) | Download the export, open it in the browser, and explain elements, attributes and escaping. | 5 | Done |
 | M1.7 | JSON introduction | Every API body; `express.json()` | Show a request and response in DevTools. Malformed JSON → 400. | 2, 5 | Done |
-| M1.8 | DOM | `FE/pages/*`; `document.title`, focus handling | Elements panel: watch the live DOM change as an expense is added. | 6 | Planned |
+| M1.8 | DOM | `FE/pages/*`; `document.title`, focus handling | Elements panel: watch the live DOM change as an expense is added. | 6 | Done |
 | M1.9 | URL | `new URL(req.url)` in `NC/01`; query params on `/api/expenses?page=…` | Break a URL into protocol, host, path and query. Change `page` and watch the results change. | 1, 5 | Done |
 | M1.10 | URI | Resource paths (`/api/expenses/42`); report §10 | Explain URI vs URL vs URN using our resource paths, and show `encodeURIComponent` on the search query. | 1, 5 | Done |
 | M1.11 | REST API | `BE/routes/*` | Walk the endpoint table: resources, verbs, statelessness, status codes. | 5 | Done |
@@ -39,52 +39,52 @@ Update a topic's row whenever a feature covering it lands (see `CLAUDE.md`).
 
 | # | Topic | Where in the project | Viva demo | Phase | Status |
 |---|---|---|---|---|---|
-| M2.1 | Language constructs | `FE/lib/*` | Walk `money()` / `groupExpenses()`: expressions, objects, arrays, spread, destructuring. | 6 | Planned |
-| M2.2 | Built-in objects | `Intl.NumberFormat`, `Date`, `Map`, `Math`, `JSON`, `RegExp` in `FE/lib/` | `money()` uses `Intl`; `months.js` uses `Date`. | 6 | Planned |
-| M2.3 | Browser objects (BOM) | `window.confirm` on delete, `navigator.onLine` banner, `history` via the router | Delete an expense → confirm dialog. Go offline → banner appears. | 6 | Planned |
-| M2.4 | DOM objects | `document.title`, `document.cookie`, `document.documentElement` | Inspect in the console the objects the app touches. | 6 | Planned |
-| M2.5 | Event handling | `onSubmit` / `onChange` / `onClick` on every form | Submit the add-expense form; show `preventDefault`. | 6 | Planned |
-| M2.6 | Form validation | `FE/lib/validate.js` (regex) + zod in `BE/schemas/*` | An invalid amount or weak password shows an inline message. Bypassing the form with curl → 400. | 4, 6 | Planned |
-| M2.7 | Cookies | `FE/lib/cookies.js` (UI preference); httpOnly auth cookie from `BE/lib/cookie.js` | The `theme` cookie is readable in the console; the auth cookie is **not** (httpOnly). | 4, 6 | Planned |
+| M2.1 | Language constructs | `FE/lib/*` | Walk `money()` / `groupExpenses()`: expressions, objects, arrays, spread, destructuring. | 6 | Done |
+| M2.2 | Built-in objects | `Intl.NumberFormat`, `Date`, `Map`, `Math`, `JSON`, `RegExp` in `FE/lib/` | `money()` uses `Intl`; `months.js` uses `Date`. | 6 | Done |
+| M2.3 | Browser objects (BOM) | `window.confirm` on delete, `navigator.onLine` banner, `history` via the router | Delete an expense → confirm dialog. Go offline → banner appears. | 6 | Done |
+| M2.4 | DOM objects | `document.title`, `document.cookie`, `document.documentElement` | Inspect in the console the objects the app touches. | 6 | Done |
+| M2.5 | Event handling | `onSubmit` / `onChange` / `onClick` on every form | Submit the add-expense form; show `preventDefault`. | 6 | Done |
+| M2.6 | Form validation | `FE/lib/validate.js` (regex) + zod in `BE/schemas/*` | An invalid amount or weak password shows an inline message. Bypassing the form with curl → 400. | 4, 6 | Done |
+| M2.7 | Cookies | `FE/lib/cookies.js` (UI preference); httpOnly auth cookie from `BE/lib/cookie.js` | The `theme` cookie is readable in the console; the auth cookie is **not** (httpOnly). | 4, 6 | Done |
 | M2.8 | ES5 vs ES6 and their differences | `NC/09-es5-vs-es6.js` | Run both halves and compare var/let, function/class, callbacks/promises. | 1 | Done |
 | M2.9 | Variables | `let`/`const` throughout; ES5 contrast in `NC/09` | Hoisting and block-scope demo in `NC/09`. | 1 | Done |
-| M2.10 | Conditions | Budget status in `FE/pages/Afford.jsx` | Move the purchase price across the threshold. | 6 | Planned |
-| M2.11 | Loops | `for…of` over `MonthRange`; `reduce` for totals | The trend chart is built from a loop over months. | 6 | Planned |
-| M2.12 | Functions | `FE/lib/` helpers; the closure in `useDebounce` | Explain `money`, `groupExpenses` and the debounce closure. | 6 | Planned |
-| M2.13 | Events | `keydown` (`Ctrl+K` focuses search); `online`/`offline` events | Press `Ctrl+K`; toggle the network. | 6 | Planned |
-| M2.14 | Arrow functions | Handlers and helpers throughout | Contrast `this` in an arrow function vs a regular function in `NC/09`. | 1, 6 | Planned |
-| M2.15 | Setting CSS styles using JS | `FE/lib/theme.js` (`style.setProperty`); dynamic `style={{ width }}` on progress bars | Toggle the theme; watch the budget bar width change. | 6 | Planned |
-| M2.16 | DOM manipulation | `theme.js`, focus management, `document.title` | Toggle the theme and inspect `<html style>`. | 6 | Planned |
+| M2.10 | Conditions | Budget status in `FE/pages/Afford.jsx` | Move the purchase price across the threshold. | 6 | Done |
+| M2.11 | Loops | `for…of` over `MonthRange`; `reduce` for totals | The trend chart is built from a loop over months. | 6 | Done |
+| M2.12 | Functions | `FE/lib/` helpers; the closure in `useDebounce` | Explain `money`, `groupExpenses` and the debounce closure. | 6 | Done |
+| M2.13 | Events | `keydown` (`Ctrl+K` focuses search); `online`/`offline` events | Press `Ctrl+K`; toggle the network. | 6 | Done |
+| M2.14 | Arrow functions | Handlers and helpers throughout | Contrast `this` in an arrow function vs a regular function in `NC/09`. | 1, 6 | Done |
+| M2.15 | Setting CSS styles using JS | `FE/lib/theme.js` (`style.setProperty`); dynamic `style={{ width }}` on progress bars | Toggle the theme; watch the budget bar width change. | 6 | Done |
+| M2.16 | DOM manipulation | `theme.js`, focus management, `document.title` | Toggle the theme and inspect `<html style>`. | 6 | Done |
 | M2.17 | Classes and inheritance | `FE/lib/Expense.js`: `Expense` and `RecurringExpense extends Expense` | The Afford page projects a recurring bill with `nextOccurrences()`; point out `super` and the override. | 6 | Planned |
-| M2.18 | Iterators | `MonthRange` with `[Symbol.iterator]` in `FE/lib/months.js` | `[...new MonthRange(from, to)]` in the console. | 6 | Planned |
-| M2.19 | Generators | `function* lastMonths(n)` in `FE/lib/months.js` | Step through it with `.next()` in the console. | 6 | Planned |
-| M2.20 | Promise | `NC/06-callback-promise-async.js`; `Promise.all` loading summary + budget | Run `NC/06`; show the parallel requests in the Network tab. | 1, 6 | Planned |
-| M2.21 | async/await | `FE/hooks/useApi.js`; every route handler | Walk `useApi` through try/catch/finally. | 6 | Planned |
+| M2.18 | Iterators | `MonthRange` with `[Symbol.iterator]` in `FE/lib/months.js` | `[...new MonthRange(from, to)]` in the console. | 6 | Done |
+| M2.19 | Generators | `function* lastMonths(n)` in `FE/lib/months.js` | Step through it with `.next()` in the console. | 6 | Done |
+| M2.20 | Promise | `NC/06-callback-promise-async.js`; `Promise.all` loading summary + budget | Run `NC/06`; show the parallel requests in the Network tab. | 1, 6 | Done |
+| M2.21 | async/await | `FE/hooks/useApi.js`; every route handler | Walk `useApi` through try/catch/finally. | 6 | Done |
 | M2.22 | Fetch | `FE/hooks/useApi.js`; `BE/services/groq.js` (server-side fetch) | Network tab request with `credentials: 'include'`; `AbortController` cancelling on unmount. | 6, 7 | Planned |
 
 ## Module 3: React
 
 | # | Topic | Where in the project | Viva demo | Phase | Status |
 |---|---|---|---|---|---|
-| M3.1 | Components | `FE/components/*`, `FE/pages/*` | Show how `page.js` was split into components. | 6 | Planned |
-| M3.2 | JSX | Every component | Show JSX next to the compiled `jsx()` output in Vite's dev sources. | 6 | Planned |
-| M3.3 | Props | `Metric`, `Heading`, `Panel` | Change a prop in React DevTools. | 6 | Planned |
-| M3.4 | State | Forms, filters, the auth mode toggle | Toggle "Create an account". | 6 | Planned |
-| M3.5 | Event handling | Forms, delete, nav | The React side of M2.5 (synthetic events). | 6 | Planned |
-| M3.6 | Conditional rendering | Auth vs app, empty states, `CAUTION` vs `YOU CAN AFFORD THIS` | Log in to an empty account → empty states. | 6 | Planned |
-| M3.7 | Lists and keys | Transactions table, recent rows, category bars | Explain `key={expense.id}`. | 6 | Planned |
-| M3.8 | Forms | Auth, add/edit expense, budget, afford, insights | Controlled inputs in React DevTools. | 6 | Planned |
-| M3.9 | useState | All pages | — | 6 | Planned |
-| M3.10 | useEffect | Load summary, document title, keydown listener with cleanup | Show the cleanup running on a route change. | 6 | Planned |
-| M3.11 | useContext | `FE/context/AuthContext.jsx` | Logging out from the sidebar updates every consumer. | 6 | Planned |
-| M3.12 | useReducer | `FE/reducers/expensesReducer.js` | Show the action log while adding and filtering. | 6 | Planned |
-| M3.13 | Custom hooks | `FE/hooks/useApi.js`, `FE/hooks/useDebounce.js` | Type in search; only one request goes out, after 300 ms. | 6 | Planned |
-| M3.14 | React Router | `FE/App.jsx` routes, `NavLink`, `ProtectedRoute`, `*` redirect | Visit `/analytics` logged out → `/login` → back to `/analytics` after logging in. | 6 | Planned |
-| M3.15 | State management (Redux Toolkit or Context API) | **Context API**: `AuthContext` + the `useReducer` store | React DevTools showing the context value change. Be ready to explain why Context was chosen over RTK. | 6 | Planned |
-| M3.16 | CSS Modules | `*.module.css` for pagination numbers and edit-form extras | Hashed class names in the DOM. | 6 | Planned |
-| M3.17 | Styled Components | `FE/components/BudgetRing.jsx` | The ring changes with % used; show the generated class. | 6 | Planned |
-| M3.18 | Memoization | `React.memo(Metric)`, `useMemo` totals, `useCallback` handlers | React Profiler: rows don't re-render while typing in search. | 6 | Planned |
-| M3.19 | Lazy loading | `React.lazy` + `Suspense` for Analytics and Insights | Network tab: the chunk loads only on the first visit. | 6 | Planned |
+| M3.1 | Components | `FE/components/*`, `FE/pages/*` | Show how `page.js` was split into components. | 6 | Done |
+| M3.2 | JSX | Every component | Show JSX next to the compiled `jsx()` output in Vite's dev sources. | 6 | Done |
+| M3.3 | Props | `Metric`, `Heading`, `Panel` | Change a prop in React DevTools. | 6 | Done |
+| M3.4 | State | Forms, filters, the auth mode toggle | Toggle "Create an account". | 6 | Done |
+| M3.5 | Event handling | Forms, delete, nav | The React side of M2.5 (synthetic events). | 6 | Done |
+| M3.6 | Conditional rendering | Auth vs app, empty states, `CAUTION` vs `YOU CAN AFFORD THIS` | Log in to an empty account → empty states. | 6 | Done |
+| M3.7 | Lists and keys | Transactions table, recent rows, category bars | Explain `key={expense.id}`. | 6 | Done |
+| M3.8 | Forms | Auth, add/edit expense, budget, afford, insights | Controlled inputs in React DevTools. | 6 | Done |
+| M3.9 | useState | All pages | — | 6 | Done |
+| M3.10 | useEffect | Load summary, document title, keydown listener with cleanup | Show the cleanup running on a route change. | 6 | Done |
+| M3.11 | useContext | `FE/context/AuthContext.jsx` | Logging out from the sidebar updates every consumer. | 6 | Done |
+| M3.12 | useReducer | `FE/reducers/expensesReducer.js` | Show the action log while adding and filtering. | 6 | Done |
+| M3.13 | Custom hooks | `FE/hooks/useApi.js`, `FE/hooks/useDebounce.js` | Type in search; only one request goes out, after 300 ms. | 6 | Done |
+| M3.14 | React Router | `FE/App.jsx` routes, `NavLink`, `ProtectedRoute`, `*` redirect | Visit `/analytics` logged out → `/login` → back to `/analytics` after logging in. | 6 | Done |
+| M3.15 | State management (Redux Toolkit or Context API) | **Context API**: `AuthContext` + the `useReducer` store | React DevTools showing the context value change. Be ready to explain why Context was chosen over RTK. | 6 | Done |
+| M3.16 | CSS Modules | `*.module.css` for pagination numbers and edit-form extras | Hashed class names in the DOM. | 6 | Done |
+| M3.17 | Styled Components | `FE/components/BudgetRing.jsx` | The ring changes with % used; show the generated class. | 6 | Done |
+| M3.18 | Memoization | `React.memo(Metric)`, `useMemo` totals, `useCallback` handlers | React Profiler: rows don't re-render while typing in search. | 6 | Done |
+| M3.19 | Lazy loading | `React.lazy` + `Suspense` for Analytics and Insights | Network tab: the chunk loads only on the first visit. | 6 | Done |
 
 ## Module 4: Node.js (6 h)
 
@@ -139,13 +139,13 @@ Coverage = topics with status `Planned` or `Done` ÷ total topics. The "Done" co
 
 | Module | Topics | Planned + Done | Planned coverage | Done |
 |---|---|---|---|---|
-| M1 Web fundamentals | 11 | 11 | 100% | 64% |
-| M2 JavaScript | 22 | 22 | 100% | 9% |
-| M3 React | 19 | 19 | 100% | 0% |
+| M1 Web fundamentals | 11 | 11 | 100% | 73% |
+| M2 JavaScript | 22 | 22 | 100% | 91% |
+| M3 React | 19 | 19 | 100% | 100% |
 | M4 Node.js | 14 | 14 | 100% | 100% |
 | M5 Express | 9 | 9 | 100% | 78% |
 | M6 Databases & integration | 9 | 9 | 100% | 56% |
-| **Overall** | **84** | **84** | **100%** | **42%** |
+| **Overall** | **84** | **84** | **100%** | **87%** |
 
 The target is at least 90% of topics. It is met at planning time.
 

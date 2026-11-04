@@ -248,7 +248,7 @@ Estimates are in evenings (about 3 focused hours) for one person. Topic codes (M
 **Done when:** all tests are green, line coverage of `backend/src` is at least 70%, and every SECURITY.md row has evidence.
 **Estimate:** 3.
 
-## Phase 9: Deployment
+## Phase 9: Deployment (minimal: CI, render.yaml, vercel.json)
 
 **Goal:** a live app on free tiers, with CI gating every PR.
 

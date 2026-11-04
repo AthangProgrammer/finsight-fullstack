@@ -1,0 +1,17 @@
+{
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "https://finsight-api.onrender.com/api/:path*" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; frame-ancestors 'none'" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "no-referrer" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    }
+  ]
+}

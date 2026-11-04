@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: finsight-api
+    runtime: node
+    plan: free
+    buildCommand: npm ci -w backend -w database
+    startCommand: npm start -w backend
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: NODE_ENV
+        value: production
+      - key: TRUST_PROXY_HOPS
+        value: 2
+      - key: GROQ_MODEL
+        value: llama-3.1-8b-instant
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_CA_CERT
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false

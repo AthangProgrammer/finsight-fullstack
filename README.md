@@ -69,7 +69,7 @@ One `.env` at the repo root, used by `backend` and `database`. The frontend has 
 | `NODE_ENV` | yes | `development` / `production` / `test` | `development` |
 | `PORT` | yes | API port (Render sets this) | `4000` |
 | `LOG_LEVEL` | no | pino level | `info` |
-| `DATABASE_URL` | yes | Supabase **session pooler** URI (IPv4) | `postgresql://postgres.ref:pw@aws-0-ap-south-1.pooler.supabase.com:5432/postgres` |
+| `DATABASE_URL` | yes | Supabase **session pooler** URI (IPv4) | `postgresql://postgres.ref:pw@aws-0-ap-northeast-1.pooler.supabase.com:5432/postgres` |
 | `DATABASE_CA_CERT` | prod | Supabase CA certificate (PEM) for verified TLS | `-----BEGIN CERTIFICATE-----...` |
 | `MONGODB_URI` | yes | Atlas connection string for the least-privilege app user | `mongodb+srv://finsight_app:pw@cluster0.xxxx.mongodb.net/finsight` |
 | `JWT_SECRET` | yes | 64+ random bytes, hex | `9f2c...` |
@@ -81,7 +81,7 @@ One `.env` at the repo root, used by `backend` and `database`. The frontend has 
 ## Deployment
 
 **Supabase (Postgres)**
-1. Create a free project in the Mumbai region (`ap-south-1`).
+1. Create a free project in the Tokyo region (`ap-northeast-1`).
 2. Copy the *Session pooler* connection string. Render has no IPv6, so don't use the direct connection string. Also download the SSL certificate.
 3. Run migrations from a laptop: `npm run db:migrate` with the production `DATABASE_URL`. The migrations enable RLS on every table and revoke `anon`/`authenticated` access.
 4. In the API settings, disable the Data API.

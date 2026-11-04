@@ -93,7 +93,7 @@ Estimates are in evenings (about 3 focused hours) for one person. Topic codes (M
 **Goal:** the `@finsight/database` package owns both databases. The backend only imports it.
 
 **Tasks, Postgres (Sequelize):**
-- Supabase project in the Mumbai region; session pooler URI and CA cert go in `.env`.
+- Supabase project in the Tokyo region (`ap-northeast-1`); session pooler URI and CA cert go in `.env`.
 - `database/postgres/index.js`: a Sequelize instance with `dialectOptions.ssl = { require: true, rejectUnauthorized: true, ca }`, `pool.max: 5`, and logging at debug.
 - `database/.sequelizerc` pointing at `postgres/{config.cjs,models,migrations,seeders}`. CLI scripts are `db:migrate`, `db:migrate:undo` and `db:seed`, each run with `--env-file=../.env`.
 - Migrations:

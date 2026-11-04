@@ -100,7 +100,7 @@ Update a topic's row whenever a feature covering it lands (see `CLAUDE.md`).
 | M4.8 | Streams | `NC/05-csv-stream.js`; `GET /api/export/expenses.csv` | A 100k-row file with flat memory; download the CSV export. | 1, 5 | Planned |
 | M4.9 | File system | `NC/03-fs-path.js` | Create, read, list, stat and delete files in `data/`. | 1 | Done |
 | M4.10 | path | `NC/03-fs-path.js` | `join` vs `resolve`; `parse`. | 1 | Done |
-| M4.11 | REPL | `NC/REPL.md` + `NC/repl.js` (database models in context) | Live: `.editor`, `_`, and querying a model from the REPL. | 1, 3 | Planned |
+| M4.11 | REPL | `NC/REPL.md` + `NC/repl.js` (database models in context) | Live: `.editor`, `_`, and querying a model from the REPL. | 1, 3 | Done |
 | M4.12 | NPM packages | `NC/npm-packages.md`; workspace dependencies | `npm ls -w backend`, `npm audit`, semver ranges. | 1 | Done |
 | M4.13 | package.json | Root (workspaces, engines), `frontend/`, `backend/`, `database/`, `NC/` | Scripts, `type: module`, `engines`, `workspaces`. | 1 | Done |
 | M4.14 | Basic HTTP server without Express | `NC/01-http-server.js` | `curl` its routes and compare with the Express version. | 1 | Done |
@@ -123,10 +123,10 @@ Update a topic's row whenever a feature covering it lands (see `CLAUDE.md`).
 
 | # | Topic | Where in the project | Viva demo | Phase | Status |
 |---|---|---|---|---|---|
-| M6.1 | SQL (PostgreSQL) | Supabase Postgres; `PG/migrations/*` (constraints, index), `PG/sql/rls.sql` | Supabase SQL editor: a `SELECT` with a join and `GROUP BY`. | 3 | Planned |
-| M6.2 | Sequelize | `PG/models/*`, `PG/migrations/*`, `PG/seeders/*`, `database/.sequelizerc` | Run `db:migrate:undo` then `db:migrate`; a query using associations. | 3 | Planned |
-| M6.3 | NoSQL (MongoDB) | MongoDB Atlas M0, database `finsight`: collections `chat_logs`, `audit_logs` (90-day TTL) | Atlas collection view after asking an insight and logging in; explain documents vs rows and why logs fit documents. | 3 | Planned |
-| M6.4 | Mongoose | `MG/index.js` (`connectMongo`, `strictQuery`, `sanitizeFilter`), `MG/models/ChatLog.js`, `MG/models/AuditLog.js` | Schema validation rejecting a bad `source`; the TTL index; an aggregation such as "insights per day". | 3, 4, 7 | Planned |
+| M6.1 | SQL (PostgreSQL) | Supabase Postgres; `PG/migrations/*` (constraints, index), `PG/sql/rls.sql` | Supabase SQL editor: a `SELECT` with a join and `GROUP BY`. | 3 | Done |
+| M6.2 | Sequelize | `PG/models/*`, `PG/migrations/*`, `PG/seeders/*`, `database/.sequelizerc` | Run `db:migrate:undo` then `db:migrate`; a query using associations. | 3 | Done |
+| M6.3 | NoSQL (MongoDB) | MongoDB Atlas M0, database `finsight`: collections `chat_logs`, `audit_logs` (90-day TTL) | Atlas collection view after asking an insight and logging in; explain documents vs rows and why logs fit documents. | 3 | Done |
+| M6.4 | Mongoose | `MG/index.js` (`connectMongo`, `strictQuery`, `sanitizeFilter`), `MG/models/ChatLog.js`, `MG/models/AuditLog.js` | Schema validation rejecting a bad `source`; the TTL index; an aggregation such as "insights per day". | 3, 4, 7 | Done |
 | M6.5 | Connecting React frontend to Express backend | `FE/hooks/useApi.js`; Vite proxy (dev); Vercel rewrite (prod) | Add an expense and follow it UI → API → DB. | 6, 9 | Planned |
 | M6.6 | CORS | `cors` allowlist with credentials in `BE/app.js` | A request from a non-allowed origin fails in the console. | 2 | Done |
 | M6.7 | Environment variables | `BE/config.js` (zod-validated), root `.env.example`, `--env-file`, host dashboards | Remove `JWT_SECRET` → the server refuses to start. | 2 | Planned |
@@ -142,10 +142,10 @@ Coverage = topics with status `Planned` or `Done` ÷ total topics. The "Done" co
 | M1 Web fundamentals | 11 | 11 | 100% | 9% |
 | M2 JavaScript | 22 | 22 | 100% | 9% |
 | M3 React | 19 | 19 | 100% | 0% |
-| M4 Node.js | 14 | 14 | 100% | 86% |
+| M4 Node.js | 14 | 14 | 100% | 93% |
 | M5 Express | 9 | 9 | 100% | 33% |
-| M6 Databases & integration | 9 | 9 | 100% | 11% |
-| **Overall** | **84** | **84** | **100%** | **23%** |
+| M6 Databases & integration | 9 | 9 | 100% | 56% |
+| **Overall** | **84** | **84** | **100%** | **29%** |
 
 The target is at least 90% of topics. It is met at planning time.
 

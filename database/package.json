@@ -1,5 +1,28 @@
 {
   "name": "@finsight/database",
+  "version": "0.0.0",
   "private": true,
-  "type": "module"
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js"
+  },
+  "scripts": {
+    "db:migrate": "node --env-file=../.env ../node_modules/sequelize-cli/lib/sequelize db:migrate",
+    "db:migrate:undo": "node --env-file=../.env ../node_modules/sequelize-cli/lib/sequelize db:migrate:undo",
+    "db:migrate:undo:all": "node --env-file=../.env ../node_modules/sequelize-cli/lib/sequelize db:migrate:undo:all",
+    "db:seed": "node --env-file=../.env ../node_modules/sequelize-cli/lib/sequelize db:seed:all",
+    "db:seed:categories": "node --env-file=../.env ../node_modules/sequelize-cli/lib/sequelize db:seed --seed 20260101000001-categories.cjs",
+    "test": "node --env-file=../.env --test \"tests/**/*.test.js\""
+  },
+  "dependencies": {
+    "bcryptjs": "3.0.3",
+    "mongoose": "9.11.4",
+    "pg": "8.23.1",
+    "pg-hstore": "2.3.4",
+    "sequelize": "6.37.8"
+  },
+  "devDependencies": {
+    "sequelize-cli": "6.6.5"
+  }
 }

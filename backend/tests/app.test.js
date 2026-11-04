@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 process.env.NODE_ENV = 'production';
 process.env.CORS_ORIGINS = 'http://localhost:5173';
 process.env.LOG_LEVEL = 'silent';
+process.env.JWT_SECRET = 'x'.repeat(32);
 
 const { createApp } = await import('../src/app.js');
 const { errorHandler } = await import('../src/middleware/errorHandler.js');

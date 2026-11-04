@@ -5,15 +5,17 @@
   "scripts": {
     "dev": "node --env-file=../.env --watch src/server.js",
     "start": "node src/server.js",
-    "test": "node --test \"tests/**/*.test.js\""
+    "test": "node --env-file=../.env --test \"tests/**/*.test.js\""
   },
   "dependencies": {
     "@finsight/database": "0.0.0",
+    "bcryptjs": "3.0.3",
     "cookie-parser": "1.4.7",
     "cors": "2.8.6",
     "express": "5.3.0",
     "express-rate-limit": "8.7.3",
     "helmet": "8.3.0",
+    "jsonwebtoken": "9.0.3",
     "pino": "10.4.0",
     "pino-http": "11.0.0",
     "zod": "4.6.7"

@@ -116,8 +116,8 @@ Update a topic's row whenever a feature covering it lands (see `CLAUDE.md`).
 | M5.5 | CRUD operations | Expenses (including PATCH) and budget | Create, read, update and delete live in the UI and with curl. | 5 | Planned |
 | M5.6 | Error handling | `BE/middleware/errorHandler.js`, `notFound.js`, `HttpError` | A bad id → JSON 404. A forced error → 500 with no stack in production. | 2 | Done |
 | M5.7 | Logging | `pino-http` with redaction; auth events in `AuditLog` | A request's log line; the password field shows `[Redacted]`. | 2, 4 | Planned |
-| M5.8 | Authentication (JWT) | `BE/routes/auth.js`, `BE/middleware/requireAuth.js`, `BE/lib/jwt.js` | A tampered token → 401; a token reused after logout → 401. | 4 | Planned |
-| M5.9 | bcrypt | `BE/routes/auth.js` (bcryptjs, cost 12) | Show the `$2b$12$…` hash in the DB and time one hash. | 4 | Planned |
+| M5.8 | Authentication (JWT) | `BE/routes/auth.js`, `BE/middleware/requireAuth.js`, `BE/lib/token.js` | A tampered token → 401; a token reused after logout → 401. | 4 | Done |
+| M5.9 | bcrypt | `BE/routes/auth.js` (bcryptjs, cost 12) | Show the `$2b$12$…` hash in the DB and time one hash. | 4 | Done |
 
 ## Module 6: Databases and full-stack integration (6 h)
 
@@ -143,9 +143,9 @@ Coverage = topics with status `Planned` or `Done` ÷ total topics. The "Done" co
 | M2 JavaScript | 22 | 22 | 100% | 9% |
 | M3 React | 19 | 19 | 100% | 0% |
 | M4 Node.js | 14 | 14 | 100% | 93% |
-| M5 Express | 9 | 9 | 100% | 33% |
+| M5 Express | 9 | 9 | 100% | 56% |
 | M6 Databases & integration | 9 | 9 | 100% | 56% |
-| **Overall** | **84** | **84** | **100%** | **29%** |
+| **Overall** | **84** | **84** | **100%** | **31%** |
 
 The target is at least 90% of topics. It is met at planning time.
 

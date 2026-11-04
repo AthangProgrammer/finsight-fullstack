@@ -8,6 +8,8 @@ const schema = z.object({
     .string()
     .min(1)
     .transform((value) => value.split(',').map((origin) => origin.trim()).filter(Boolean)),
+  JWT_SECRET: z.string().min(32),
+  JWT_EXPIRES_IN: z.string().default('30m'),
   TRUST_PROXY_HOPS: z.coerce.number().int().min(0).max(5).default(0),
 });
 

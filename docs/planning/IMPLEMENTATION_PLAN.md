@@ -7,17 +7,17 @@ Estimates are in evenings (about 3 focused hours) for one person. Topic codes (M
 | Phase | Name | Workspace(s) | Evenings | Depends on | Proposed owner | Reviewer |
 |---|---|---|---|---|---|---|
 | 0 | Setup | root, docs | 1 | — | Athang | team |
-| 1 | Node core + workspace root | root, `backend/node-core` | 2 | 0 | Om | Athang |
+| 1 | Node core + workspace root | root, `backend/node-core` | 2 | 0 | Athang | Aryan |
 | 2 | Express skeleton | `backend` | 1 | 1 (root package.json) | Athang | Aryan |
-| 3 | Database (Postgres + Mongo) | `database` | 3 | 1 | Aryan | Athang |
-| 4 | Auth | `backend`, `database` | 2 | 2, 3 | Om | Aryan |
-| 5 | REST API | `backend` | 2 | 4 | Aryan | Om |
-| 6 | Frontend port | `frontend` | 4 | 2 (UI), 5 (wiring) | Aneesh | Athang |
-| 7 | AI insights | `backend`, `database` | 1 | 5 | Om | Aneesh |
-| 8 | Hardening + tests | all | 3 | 5, 6, 7 | Athang (backend) + Aneesh (frontend, Playwright) | cross |
+| 3 | Database (Postgres + Mongo) | `database` | 3 | 1 | Athang | Om |
+| 4 | Auth | `backend`, `database` | 2 | 2, 3 | Athang | Aryan |
+| 5 | REST API | `backend` | 2 | 4 | Athang | Om |
+| 6 | Frontend port | `frontend` | 4 | 2 (UI), 5 (wiring) | Athang | Aneesh |
+| 7 | AI insights | `backend`, `database` | 1 | 5 | Athang | Aneesh |
+| 8 | Hardening + tests | all | 3 | 5, 6, 7 | Athang | Om |
 | 9 | Deployment + CI | root, hosts | 2 | 8 | Athang | Aryan |
 | 10 | Report + demo | `docs/report` | 2 | 9 | **on hold**, all | — |
-| | **Total** | | **23** | | Athang 5.5 · Aneesh 5.5 · Aryan 5 · Om 5 (excluding Phase 10) | |
+| | **Total** | | **23** | | Athang 21 (excluding Phase 10) | |
 
 ---
 

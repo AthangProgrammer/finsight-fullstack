@@ -26,7 +26,7 @@ Update a topic's row whenever a feature covering it lands (see `CLAUDE.md`).
 | M1.1 | Working of a web browser | Report §6; DevTools capture of the app loading | Network tab waterfall: DNS → TLS → HTML → JS bundle → `/api/auth/me`. Explain parsing, DOM, CSSOM, render and JS. | 9 | Planned |
 | M1.2 | HTTP | `NC/01-http-server.js`; `BE/routes/*`; API table | Run `curl -i` on a route and point out the method, status line, headers and body. Show 200/201/400/401/404/429 in the API table. | 1, 5 | Planned |
 | M1.3 | HTTPS | Production on Vercel + Render; `Secure` cookie | Padlock and certificate in the browser. Cookie marked Secure in DevTools → Application. | 9 | Planned |
-| M1.4 | DNS | `NC/08-net-dns.js` | Run `dns.lookup` / `resolve4` on the Vercel and Render hostnames, and compare with `nslookup`. | 1 | Planned |
+| M1.4 | DNS | `NC/08-net-dns.js` | Run `dns.lookup` / `resolve4` on the Vercel and Render hostnames, and compare with `nslookup`. | 1 | Done |
 | M1.5 | TLS | `PG/index.js` (`ssl.ca`, `rejectUnauthorized`); Atlas TLS; production HTTPS | `curl -vI https://<app>` shows the TLS version, cipher and certificate chain. Sequelize refuses to connect without the CA. | 3, 9 | Planned |
 | M1.6 | XML introduction | `GET /api/export/expenses.xml` (`BE/routes/export.js`, `BE/lib/xml.js`) | Download the export, open it in the browser, and explain elements, attributes and escaping. | 5 | Planned |
 | M1.7 | JSON introduction | Every API body; `express.json()` | Show a request and response in DevTools. Malformed JSON → 400. | 2, 5 | Planned |
@@ -46,8 +46,8 @@ Update a topic's row whenever a feature covering it lands (see `CLAUDE.md`).
 | M2.5 | Event handling | `onSubmit` / `onChange` / `onClick` on every form | Submit the add-expense form; show `preventDefault`. | 6 | Planned |
 | M2.6 | Form validation | `FE/lib/validate.js` (regex) + zod in `BE/schemas/*` | An invalid amount or weak password shows an inline message. Bypassing the form with curl → 400. | 4, 6 | Planned |
 | M2.7 | Cookies | `FE/lib/cookies.js` (UI preference); httpOnly auth cookie from `BE/lib/cookie.js` | The `theme` cookie is readable in the console; the auth cookie is **not** (httpOnly). | 4, 6 | Planned |
-| M2.8 | ES5 vs ES6 and their differences | `NC/09-es5-vs-es6.js` | Run both halves and compare var/let, function/class, callbacks/promises. | 1 | Planned |
-| M2.9 | Variables | `let`/`const` throughout; ES5 contrast in `NC/09` | Hoisting and block-scope demo in `NC/09`. | 1 | Planned |
+| M2.8 | ES5 vs ES6 and their differences | `NC/09-es5-vs-es6.js` | Run both halves and compare var/let, function/class, callbacks/promises. | 1 | Done |
+| M2.9 | Variables | `let`/`const` throughout; ES5 contrast in `NC/09` | Hoisting and block-scope demo in `NC/09`. | 1 | Done |
 | M2.10 | Conditions | Budget status in `FE/pages/Afford.jsx` | Move the purchase price across the threshold. | 6 | Planned |
 | M2.11 | Loops | `for…of` over `MonthRange`; `reduce` for totals | The trend chart is built from a loop over months. | 6 | Planned |
 | M2.12 | Functions | `FE/lib/` helpers; the closure in `useDebounce` | Explain `money`, `groupExpenses` and the debounce closure. | 6 | Planned |
@@ -90,20 +90,20 @@ Update a topic's row whenever a feature covering it lands (see `CLAUDE.md`).
 
 | # | Topic | Where in the project | Viva demo | Phase | Status |
 |---|---|---|---|---|---|
-| M4.1 | Node.js runtime | `NC/` README; `process.version`, `process.env`, globals | `node -p process.versions` | 1 | Planned |
-| M4.2 | Asynchronous programming | `NC/06`; all route handlers | A non-blocking read while a timer keeps ticking. | 1 | Planned |
-| M4.3 | Callback concept | `NC/06` (callback version, error-first) | Run it and trigger the error path. | 1 | Planned |
-| M4.4 | Event loop | `NC/07-event-loop.js` | Predict the output order, then run it. | 1 | Planned |
-| M4.5 | EventEmitter | `NC/02-event-emitter.js` (`BudgetMonitor`) | Spend past 80% and 100% → the events fire. | 1 | Planned |
-| M4.6 | Networking module | `NC/08-net-dns.js` (`net` TCP echo) | Two terminals: one server, one client. | 1 | Planned |
-| M4.7 | Buffers | `NC/04-buffers.js` | `₹` is 3 bytes; hex/base64 round trip. | 1 | Planned |
+| M4.1 | Node.js runtime | `NC/` README; `process.version`, `process.env`, globals | `node -p process.versions` | 1 | Done |
+| M4.2 | Asynchronous programming | `NC/06`; all route handlers | A non-blocking read while a timer keeps ticking. | 1 | Done |
+| M4.3 | Callback concept | `NC/06` (callback version, error-first) | Run it and trigger the error path. | 1 | Done |
+| M4.4 | Event loop | `NC/07-event-loop.js` | Predict the output order, then run it. | 1 | Done |
+| M4.5 | EventEmitter | `NC/02-event-emitter.js` (`BudgetMonitor`) | Spend past 80% and 100% → the events fire. | 1 | Done |
+| M4.6 | Networking module | `NC/08-net-dns.js` (`net` TCP echo) | Two terminals: one server, one client. | 1 | Done |
+| M4.7 | Buffers | `NC/04-buffers.js` | `₹` is 3 bytes; hex/base64 round trip. | 1 | Done |
 | M4.8 | Streams | `NC/05-csv-stream.js`; `GET /api/export/expenses.csv` | A 100k-row file with flat memory; download the CSV export. | 1, 5 | Planned |
-| M4.9 | File system | `NC/03-fs-path.js` | Create, read, list, stat and delete files in `data/`. | 1 | Planned |
-| M4.10 | path | `NC/03-fs-path.js` | `join` vs `resolve`; `parse`. | 1 | Planned |
+| M4.9 | File system | `NC/03-fs-path.js` | Create, read, list, stat and delete files in `data/`. | 1 | Done |
+| M4.10 | path | `NC/03-fs-path.js` | `join` vs `resolve`; `parse`. | 1 | Done |
 | M4.11 | REPL | `NC/REPL.md` + `NC/repl.js` (database models in context) | Live: `.editor`, `_`, and querying a model from the REPL. | 1, 3 | Planned |
-| M4.12 | NPM packages | `NC/npm-packages.md`; workspace dependencies | `npm ls -w backend`, `npm audit`, semver ranges. | 1 | Planned |
-| M4.13 | package.json | Root (workspaces, engines), `frontend/`, `backend/`, `database/`, `NC/` | Scripts, `type: module`, `engines`, `workspaces`. | 1 | Planned |
-| M4.14 | Basic HTTP server without Express | `NC/01-http-server.js` | `curl` its routes and compare with the Express version. | 1 | Planned |
+| M4.12 | NPM packages | `NC/npm-packages.md`; workspace dependencies | `npm ls -w backend`, `npm audit`, semver ranges. | 1 | Done |
+| M4.13 | package.json | Root (workspaces, engines), `frontend/`, `backend/`, `database/`, `NC/` | Scripts, `type: module`, `engines`, `workspaces`. | 1 | Done |
+| M4.14 | Basic HTTP server without Express | `NC/01-http-server.js` | `curl` its routes and compare with the Express version. | 1 | Done |
 
 ## Module 5: Express (6 h)
 
@@ -139,13 +139,13 @@ Coverage = topics with status `Planned` or `Done` ÷ total topics. The "Done" co
 
 | Module | Topics | Planned + Done | Planned coverage | Done |
 |---|---|---|---|---|
-| M1 Web fundamentals | 11 | 11 | 100% | 0% |
-| M2 JavaScript | 22 | 22 | 100% | 0% |
+| M1 Web fundamentals | 11 | 11 | 100% | 9% |
+| M2 JavaScript | 22 | 22 | 100% | 9% |
 | M3 React | 19 | 19 | 100% | 0% |
-| M4 Node.js | 14 | 14 | 100% | 0% |
+| M4 Node.js | 14 | 14 | 100% | 86% |
 | M5 Express | 9 | 9 | 100% | 0% |
 | M6 Databases & integration | 9 | 9 | 100% | 0% |
-| **Overall** | **84** | **84** | **100%** | **0%** |
+| **Overall** | **84** | **84** | **100%** | **18%** |
 
 The target is at least 90% of topics. It is met at planning time.
 

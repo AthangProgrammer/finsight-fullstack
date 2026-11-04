@@ -109,12 +109,12 @@ Update a topic's row whenever a feature covering it lands (see `CLAUDE.md`).
 
 | # | Topic | Where in the project | Viva demo | Phase | Status |
 |---|---|---|---|---|---|
-| M5.1 | Introduction to Express | `BE/app.js` | Contrast it with `NC/01`. | 2 | Planned |
+| M5.1 | Introduction to Express | `BE/app.js` | Contrast it with `NC/01`. | 2 | Done |
 | M5.2 | Middleware | helmet, cors, json, cookie-parser, rate-limit, `BE/middleware/requireAuth.js`, `validate.js` | Explain the order. Remove `requireAuth` and show the 401 disappear. | 2, 4 | Planned |
-| M5.3 | Routing | `BE/routes/*.js` with `express.Router` | Show the mount points under `/api`. | 2 | Planned |
+| M5.3 | Routing | `BE/routes/*.js` with `express.Router` | Show the mount points under `/api`. | 2 | Done |
 | M5.4 | RESTful API design | Resource naming, verbs, status codes, pagination envelope | API table in report §10. | 5 | Planned |
 | M5.5 | CRUD operations | Expenses (including PATCH) and budget | Create, read, update and delete live in the UI and with curl. | 5 | Planned |
-| M5.6 | Error handling | `BE/middleware/errorHandler.js`, `notFound.js`, `HttpError` | A bad id → JSON 404. A forced error → 500 with no stack in production. | 2 | Planned |
+| M5.6 | Error handling | `BE/middleware/errorHandler.js`, `notFound.js`, `HttpError` | A bad id → JSON 404. A forced error → 500 with no stack in production. | 2 | Done |
 | M5.7 | Logging | `pino-http` with redaction; auth events in `AuditLog` | A request's log line; the password field shows `[Redacted]`. | 2, 4 | Planned |
 | M5.8 | Authentication (JWT) | `BE/routes/auth.js`, `BE/middleware/requireAuth.js`, `BE/lib/jwt.js` | A tampered token → 401; a token reused after logout → 401. | 4 | Planned |
 | M5.9 | bcrypt | `BE/routes/auth.js` (bcryptjs, cost 12) | Show the `$2b$12$…` hash in the DB and time one hash. | 4 | Planned |
@@ -128,7 +128,7 @@ Update a topic's row whenever a feature covering it lands (see `CLAUDE.md`).
 | M6.3 | NoSQL (MongoDB) | MongoDB Atlas M0, database `finsight`: collections `chat_logs`, `audit_logs` (90-day TTL) | Atlas collection view after asking an insight and logging in; explain documents vs rows and why logs fit documents. | 3 | Planned |
 | M6.4 | Mongoose | `MG/index.js` (`connectMongo`, `strictQuery`, `sanitizeFilter`), `MG/models/ChatLog.js`, `MG/models/AuditLog.js` | Schema validation rejecting a bad `source`; the TTL index; an aggregation such as "insights per day". | 3, 4, 7 | Planned |
 | M6.5 | Connecting React frontend to Express backend | `FE/hooks/useApi.js`; Vite proxy (dev); Vercel rewrite (prod) | Add an expense and follow it UI → API → DB. | 6, 9 | Planned |
-| M6.6 | CORS | `cors` allowlist with credentials in `BE/app.js` | A request from a non-allowed origin fails in the console. | 2 | Planned |
+| M6.6 | CORS | `cors` allowlist with credentials in `BE/app.js` | A request from a non-allowed origin fails in the console. | 2 | Done |
 | M6.7 | Environment variables | `BE/config.js` (zod-validated), root `.env.example`, `--env-file`, host dashboards | Remove `JWT_SECRET` → the server refuses to start. | 2 | Planned |
 | M6.8 | Deployment: Vercel | `frontend/vercel.json` | The live URL and the rewrite rule. | 9 | Planned |
 | M6.9 | Deployment: Render | `render.yaml` | Render dashboard, logs and health check. | 9 | Planned |
@@ -143,9 +143,9 @@ Coverage = topics with status `Planned` or `Done` ÷ total topics. The "Done" co
 | M2 JavaScript | 22 | 22 | 100% | 9% |
 | M3 React | 19 | 19 | 100% | 0% |
 | M4 Node.js | 14 | 14 | 100% | 86% |
-| M5 Express | 9 | 9 | 100% | 0% |
-| M6 Databases & integration | 9 | 9 | 100% | 0% |
-| **Overall** | **84** | **84** | **100%** | **18%** |
+| M5 Express | 9 | 9 | 100% | 33% |
+| M6 Databases & integration | 9 | 9 | 100% | 11% |
+| **Overall** | **84** | **84** | **100%** | **23%** |
 
 The target is at least 90% of topics. It is met at planning time.
 

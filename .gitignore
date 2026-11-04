@@ -24,3 +24,6 @@ desktop.ini
 .idea/
 *.swp
 *.crt
+
+frontend/e2e/current/
+frontend/e2e/diff/

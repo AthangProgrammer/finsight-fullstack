@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "bcryptjs": "3.0.3",
-    "mongoose": "9.11.4",
+    "mongoose": "9.12.0",
     "pg": "8.23.1",
     "pg-hstore": "2.3.4",
     "sequelize": "6.37.8"
